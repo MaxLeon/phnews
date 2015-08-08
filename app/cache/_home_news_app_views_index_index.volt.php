@@ -1,14 +1,17 @@
-<center>
-<br><br>
-<p><b>
-<font size="6">
-<h1>Welcome to Phalcon News!</h1>
+<!DOCTYPE html>
+<html>
+	<center>
+	<br><br>
+	<p><b>
+	<font size="6">
+	<h1>Welcome to Phalcon News!</h1>
 
-<?php echo $this->tag->linkTo(array('signup', 'Sign Up')); ?>
-<br>
-<?php echo $this->tag->linkTo(array('login', 'Login')); ?>
+	<center><?php echo $this->tag->linkTo(array('signup', 'Sign Up')); ?></center>
+	
+	<center><?php echo $this->tag->linkTo(array('login', 'Login')); ?></center>
 
-</font>
-</b></p>
+	</font>
+	</b></p>
 
-</center>
+	</center>
+</html>

@@ -22,12 +22,12 @@
         <div>
             <label for="lname">Last Name</label>
             <div>
-                {{ text_field('fname') }}
+                {{ text_field('lname') }}
             </div>
         </div>
 
         <div>
-            <label for="password">Password</label>
+            <label for="pass">Password</label>
             <div>
                 {{ password_field('password') }}
             </div>
@@ -36,7 +36,7 @@
         <br>
         
         <div>
-            {{ submit_button('Login') }}
+            {{ submit_button('Signup') }}
             {{ submit_button('Go Back') }}
         </div>
             

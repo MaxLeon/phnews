@@ -13,6 +13,15 @@ class SignupController extends \Phalcon\Mvc\Controller
     {
 
 
+    	if ($this->request->ispost()) {
+
+    		echo ($this->request->getPost('fname')) . ($this->request->getPost('lname'));
+    		# code...
+    	}
+
+
+
+
     }
 
 }

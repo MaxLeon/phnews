@@ -22,12 +22,12 @@
         <div>
             <label for="lname">Last Name</label>
             <div>
-                <?php echo $this->tag->textField(array('fname')); ?>
+                <?php echo $this->tag->textField(array('lname')); ?>
             </div>
         </div>
 
         <div>
-            <label for="password">Password</label>
+            <label for="pass">Password</label>
             <div>
                 <?php echo $this->tag->passwordField(array('password')); ?>
             </div>
@@ -36,7 +36,7 @@
         <br>
         
         <div>
-            <?php echo $this->tag->submitButton(array('Login')); ?>
+            <?php echo $this->tag->submitButton(array('Signup')); ?>
             <?php echo $this->tag->submitButton(array('Go Back')); ?>
         </div>
             

@@ -6,9 +6,9 @@
 	<font size="6">
 	<h1>Welcome to Phalcon News!</h1>
 
-	{{link_to("signup", "Sign Up")}}
-	<br>
-	{{link_to("login", "Login")}}
+	<center>{{link_to("signup", "Sign Up")}}</center>
+	
+	<center>{{link_to("login", "Login")}}</center>
 
 	</font>
 	</b></p>
