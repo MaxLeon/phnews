@@ -8,9 +8,16 @@
     <br><br>
     <center>
     <body>
-        {{ form('signup/register') }}
+        {{ form('signup/sign') }}
 
         <fieldset>
+
+        <div>
+            <label for="uname">User Name</label>
+            <div>
+                {{ text_field('uname') }}
+            </div>
+        </div>
         
         <div>
             <label for="fname">First Name</label>
@@ -29,7 +36,7 @@
         <div>
             <label for="pass">Password</label>
             <div>
-                {{ password_field('password') }}
+                {{ password_field('pass') }}
             </div>
         </div>
 
@@ -37,7 +44,6 @@
         
         <div>
             {{ submit_button('Signup') }}
-            {{ submit_button('Go Back') }}
         </div>
             
         </div>

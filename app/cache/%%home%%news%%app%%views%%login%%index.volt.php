@@ -3,43 +3,37 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Signup</title>
+        <title>Login</title>
     </head>
     <br><br>
     <center>
     <body>
-        <?php echo $this->tag->form(array('signup/register')); ?>
+        <?php echo $this->tag->form(array('login/log')); ?>
 
         <fieldset>
         
         <div>
-            <label for="fname">First Name</label>
+            <label for="uname">User Name</label>
             <div>
-                <?php echo $this->tag->textField(array('fname')); ?>
-            </div>
-        </div>
-
-        <div>
-            <label for="lname">Last Name</label>
-            <div>
-                <?php echo $this->tag->textField(array('lname')); ?>
+                <?php echo $this->tag->textField(array('uname')); ?>
             </div>
         </div>
 
         <div>
             <label for="pass">Password</label>
             <div>
-                <?php echo $this->tag->passwordField(array('password')); ?>
+                <?php echo $this->tag->passwordField(array('pass')); ?>
             </div>
         </div>
 
         <br>
         
         <div>
-            <?php echo $this->tag->submitButton(array('Signup')); ?>
-            <?php echo $this->tag->submitButton(array('Go Back')); ?>
+            <?php echo $this->tag->submitButton(array('Login')); ?>
         </div>
-            
+
+        <div>
+            <p>"Wrong username or password"</p>
         </div>
     
     	</fieldset>
