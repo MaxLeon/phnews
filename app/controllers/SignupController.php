@@ -15,7 +15,7 @@ class SignupController extends \Phalcon\Mvc\Controller
     	$User = new Users();
 
 
-    	if ($this->request->ispost()) {
+    	if ($this->request->isPost()) {
 
     		$User->uname=$this->request->getPost('uname');    		
     		$User->fname=$this->request->getPost('fname');

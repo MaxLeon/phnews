@@ -23,9 +23,9 @@ class LoginController extends \Phalcon\Mvc\Controller
 		if ($user != false) 
 		{
 			$this->_loginSession($user);
-			$this->dispatcher->forward(array('controller'=>'inpage', 'action'=>'index'));
+			$this->response->redirect('/inpage');
 		} else {
-            $err = 
+            
             $this->view->err = "Wrong username or password";
         } 
     }
