@@ -6,7 +6,7 @@
 	<font size="6">
 	<h1>Welcome <?php echo $name; ?></h1>
 
-	<h2><?php echo $this->tag->linkTo(array('create', 'Add a news')); ?> | <?php echo $this->tag->linkTo(array('logout', 'Logout')); ?></h2>
+	<h2><?php echo $this->tag->linkTo(array('create', 'Add a news')); ?> | <?php echo $this->tag->linkTo(array('Login/logout', 'Logout')); ?></h2>
 	</b></p>
 	</font>
 	
@@ -27,7 +27,8 @@
 
 		<br>
 		<div>
-            <?php echo $this->tag->linkTo(array('inpage/edit/' . $value['id'], 'Edit')); ?>
+            <?php echo $this->tag->linkTo(array('inpage/edit/' . $value['id'], 'Edit')); ?> |
+            <?php echo $this->tag->linkTo(array('inpage/del/' . $value['id'], 'Delete')); ?>
         </div>
 		<hr>
 

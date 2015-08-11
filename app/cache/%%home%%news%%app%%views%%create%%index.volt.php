@@ -4,34 +4,34 @@
 	<br><br>
 	<p><b>
 	<body>
-        {{ form('inpage/edit') }}
+        <?php echo $this->tag->form(array('create/new')); ?>
 
         <fieldset>
-        {{hidden_field('id', "value": id)}}
+
         <div>
             <font size=6> <label for="tittle">Tittle</label> </font>
             <div>
-                {{ text_field('tittle', "value":tittle) }}
+                <?php echo $this->tag->textField(array('tittle')); ?>
             </div>
         </div>
         <br>
         <div>
             <font size=6> <label for="author">Author</label> </font>
             <div>
-                {{ text_field('author', "value":author) }}
+                <?php echo $this->tag->textField(array('author')); ?>
             </div>
         </div>
         <br>
         <div>
             <div>
-                {{ text_area('body',"cols": "80", "rows": 20, "value":body) }}
+                <?php echo $this->tag->textArea(array('body', 'cols' => '80', 'rows' => 20)); ?>
             </div>
         </div>
 
         <br>
         
         <div>
-            {{ submit_button('Ok', "name": 'edit') }} {{ submit_button('Cancel', "name": 'edit') }}
+            <?php echo $this->tag->submitButton(array('Create')); ?>
         </div>
             
         </div>

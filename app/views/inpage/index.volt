@@ -6,7 +6,7 @@
 	<font size="6">
 	<h1>Welcome {{name}}</h1>
 
-	<h2>{{link_to("create", "Add a news")}} | {{link_to("logout", "Logout")}}</h2>
+	<h2>{{link_to("create", "Add a news")}} | {{link_to("Login/logout", "Logout")}}</h2>
 	</b></p>
 	</font>
 	

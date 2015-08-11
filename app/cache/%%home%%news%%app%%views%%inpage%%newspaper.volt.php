@@ -14,7 +14,8 @@
 
 		<br>
 		<div>
-            <?php echo $this->tag->linkTo(array('inpage/edit/' . $value['id'], 'Edit')); ?>
+            <?php echo $this->tag->linkTo(array('inpage/edit/' . $value['id'], 'Edit')); ?> |
+            <?php echo $this->tag->linkTo(array('inpage/del/' . $value['id'], 'Delete')); ?>
         </div>
 		<hr>
 

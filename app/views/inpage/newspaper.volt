@@ -14,7 +14,8 @@
 
 		<br>
 		<div>
-            {{link_to("inpage/edit/"~value['id'], "Edit")}}
+            {{link_to("inpage/edit/"~value['id'], "Edit")}} |
+            {{link_to("inpage/del/"~value['id'], "Delete")}}
         </div>
 		<hr>
 

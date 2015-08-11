@@ -29,11 +29,7 @@
         <br>
         
         <div>
-            <?php echo $this->tag->submitButton(array('Login')); ?>
-        </div>
-
-        <div>
-            <p>"Wrong username or password"</p>
+            <?php echo $this->tag->submitButton(array('Login', 'name' => 'login')); ?>
         </div>
     
     	</fieldset>

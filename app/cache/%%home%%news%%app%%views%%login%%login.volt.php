@@ -8,28 +8,32 @@
     <br><br>
     <center>
     <body>
-        {{ form('login/log') }}
+        <?php echo $this->tag->form(array('login/login')); ?>
 
         <fieldset>
         
         <div>
             <label for="uname">User Name</label>
             <div>
-                {{ text_field('uname') }}
+                <?php echo $this->tag->textField(array('uname')); ?>
             </div>
         </div>
 
         <div>
             <label for="pass">Password</label>
             <div>
-                {{ password_field('pass') }}
+                <?php echo $this->tag->passwordField(array('pass')); ?>
             </div>
         </div>
 
         <br>
         
         <div>
-            {{ submit_button('Login', "name":'login') }}
+            <?php echo $this->tag->submitButton(array('Login', 'name' => 'login')); ?>
+        </div>
+
+        <div>
+            <?php echo $err; ?>
         </div>
     
     	</fieldset>

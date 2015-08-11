@@ -25,8 +25,7 @@ class LoginController extends \Phalcon\Mvc\Controller
 			$this->_loginSession($user);
 			$this->response->redirect('/inpage');
 		} else {
-            
-            $this->view->err = "Wrong username or password";
+            $this->response->redirect('/login');
         } 
     }
 
@@ -34,6 +33,13 @@ class LoginController extends \Phalcon\Mvc\Controller
     {
 
     	$this->session->set('user', array('id' => $user->id, 'name' => $user->fname));
+    }
+
+    public function logoutAction()
+    {
+        $this->session->destroy();
+        $this->response->redirect('/');
+        
     }
 
 }
