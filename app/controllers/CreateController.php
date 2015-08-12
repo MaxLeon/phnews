@@ -31,9 +31,9 @@ class CreateController extends \Phalcon\Mvc\Controller
 
         if ($this->request->isPost()) {
 
-            $New->tittle=$this->request->getPost('tittle');
-            $New->author=$this->request->getPost('author');
-            $New->body=$this->request->getPost('body');
+            $New->tittle=$this->request->getPost('tittle', "string");
+            $New->author=$this->request->getPost('author', "string");
+            $New->body=$this->request->getPost('body', "string");
             $New->save();
             $this->response->redirect('/inpage');
         }

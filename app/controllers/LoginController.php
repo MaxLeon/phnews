@@ -1,4 +1,4 @@
-<?php
+<?php use Phalcon\Mvc\Controller;
 /**
  * Clase de la pagina de login
  *
@@ -10,7 +10,7 @@
  *
  * @link http://phnews.com/login
  */
-class LoginController extends \Phalcon\Mvc\Controller
+class LoginController extends Controller
 {
     public function indexAction()
     {

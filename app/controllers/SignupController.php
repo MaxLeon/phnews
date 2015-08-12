@@ -1,4 +1,4 @@
-<?php
+<?php use Phalcon\Mvc\Controller;
 /**
  * Clase de la pagina de registro
  *
@@ -10,7 +10,7 @@
  *
  * @link http://phnews.com/singup
  */
-class SignupController extends \Phalcon\Mvc\Controller
+class SignupController extends Controller
 {
     /**
      * Funcion index
@@ -35,6 +35,7 @@ class SignupController extends \Phalcon\Mvc\Controller
             $User->lname=$this->request->getPost('lname');
             $User->pass=sha1($this->request->getPost('pass'));
             $User->save();
+            $this->response->redirect('/login');
         }
     }
 }

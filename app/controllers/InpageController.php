@@ -24,7 +24,7 @@ class InpageController extends \Phalcon\Mvc\Controller
 
         $this->view->name = $name['name'];
 
-        $theNews = News::find(array('columns' => 'id, tittle, author, body'));
+        $theNews = News::find(('columns' => 'id, tittle, author, body'));
         $this->view->theNews = $theNews;
 
     }
@@ -37,23 +37,21 @@ class InpageController extends \Phalcon\Mvc\Controller
     public function editAction($editable)
     {
         $editarr = News::findFirst($editable);
+
         if ($this->request->isPost()) {
             switch ($this->request->getPost('edit')) {
+           
             case 'Ok':
-                $editarr->tittle=$this->request->getPost('tittle');
-                $editarr->author=$this->request->getPost('author');
-                $editarr->body=$this->request->getPost('body');
+                $editarr->tittle=$this->request->getPost('tittle', "string");
+                $editarr->author=$this->request->getPost('author', "string");
+                $editarr->body=$this->request->getPost('body', "string");
                 $editarr->id=$this->request->getPost('id');
                 $editarr->save();
-                $this->response->redirect('/inpage');
-                        
-                        
+                $this->response->redirect('/inpage');         
                 break;
 
             case 'Cancel':
-
-                        $this->response->redirect('/inpage');
-                            
+                $this->response->redirect('/inpage');   
                 break;
                     
             default:

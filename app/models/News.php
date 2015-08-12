@@ -1,5 +1,4 @@
-<?php 
-use Phalcon\Mvc\Model;
+<?php  use Phalcon\Mvc\Model;
 /**
  * Clase representativa del modelo News y se encarga de contener los datos de las noticias
  *
