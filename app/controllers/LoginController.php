@@ -1,4 +1,6 @@
-<?php
+<?php namespace App\Controllers;
+use \Phalcon\Mvc\Controller;
+use App\Models\Users;
 /**
  * Clase de la pagina de login
  *
@@ -10,11 +12,35 @@
  *
  * @link http://phnews.com/login
  */
-class LoginController extends \Phalcon\Mvc\Controller
+class LoginController extends Controller
 {
     public function indexAction()
     {
+        $err="";
+        $this->view->err=$err;
 
+        if ($this->request->isPost()) {
+
+            $username = $this->request->getPost('uname');
+            $password = $this->request->getPost('pass');
+
+            $user = Users::findFirst(["uname = :username:", 'bind' => ['username' => $username]]);
+            
+            if ($user) {
+
+                if ($this->security->checkHash($password, $user->pass)) {
+
+                    $this->loginSession($user);
+                    $this->response->redirect('/inpage');
+                } else {
+
+                    $this->flash->notice("Wrong User or Password");
+                    die();
+                    $err="Wrong User or Password";
+                    $this->view->err=$err;
+                }
+            }
+        }
     }
 
     /**
@@ -22,17 +48,7 @@ class LoginController extends \Phalcon\Mvc\Controller
      */
     public function logAction()
     {
-        $username = $this->request->getPost('uname');
-        $password = $this->request->getPost('pass');
-
-        $user = Users::findFirst(array("uname = :username: AND pass = :password:", 'bind' => array('username' => $username, 'password' => sha1($password))));
-
-        if ($user != false) {
-            $this->loginSession($user);
-            $this->response->redirect('/inpage');
-        } else {
-            $this->response->redirect('/login');
-        }
+        
     }
 
     /**

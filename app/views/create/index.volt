@@ -4,7 +4,7 @@
 	<br><br>
 	<p><b>
 	<body>
-        {{ form('create/new') }}
+        {{ form('create') }}
 
         <fieldset>
 
@@ -31,10 +31,10 @@
         <br>
         
         <div>
-            {{ submit_button('Create') }}
+            {{ submit_button('Create', "name": 'create')}}  {{ submit_button('Cancel', "name": 'create')}}
         </div>
-            
-        </div>
+        <br>
+        <div><font color="#2E9AFE">{{err}}</font></div>
     
     	</fieldset>
 	</form>

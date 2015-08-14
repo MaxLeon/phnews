@@ -1,4 +1,6 @@
-<?php
+<?php namespace App\Controllers;
+use App\Models\News;
+use \Phalcon\Mvc\Controller;
 /**
  * Clase de la pagina principal
  *
@@ -10,7 +12,7 @@
  *
  * @link http://phnews.com/inpage
  */
-class InpageController extends \Phalcon\Mvc\Controller
+class InpageController extends Controller
 {
     /**
      * Funcion encargada de cargar los modelos de las noticias
@@ -20,11 +22,11 @@ class InpageController extends \Phalcon\Mvc\Controller
     public function indexAction()
     {
 
-        $name = $this->session->get('user');
+        $name = $this->session->get('user', "string");
 
         $this->view->name = $name['name'];
 
-        $theNews = News::find(array('columns' => 'id, tittle, author, body'));
+        $theNews = News::find(['columns' => 'id, tittle, author, body']);
         $this->view->theNews = $theNews;
 
     }
@@ -40,9 +42,9 @@ class InpageController extends \Phalcon\Mvc\Controller
         if ($this->request->isPost()) {
             switch ($this->request->getPost('edit')) {
             case 'Ok':
-                $editarr->tittle=$this->request->getPost('tittle');
-                $editarr->author=$this->request->getPost('author');
-                $editarr->body=$this->request->getPost('body');
+                $editarr->tittle=$this->request->getPost('tittle', "string");
+                $editarr->author=$this->request->getPost('author', "string");
+                $editarr->body=$this->request->getPost('body', "string");
                 $editarr->id=$this->request->getPost('id');
                 $editarr->save();
                 $this->response->redirect('/inpage');
@@ -82,7 +84,10 @@ class InpageController extends \Phalcon\Mvc\Controller
         if ($delarr!=false) {
             $delarr->delete();
         }
-          $this->response->redirect('/inpage');
+        
+        $this->response->redirect('/inpage');
+        $this->flash->error("too bad! the form had errors");
+
     }
 }
 

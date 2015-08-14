@@ -8,7 +8,7 @@
     <br><br>
     <center>
     <body>
-        {{ form('login/log') }}
+        {{ form('login') }}
 
         <fieldset>
         
@@ -31,7 +31,11 @@
         <div>
             {{ submit_button('Login', "name":'login') }}
         </div>
-    
+
+        <div>
+        <br>
+            <font color="#2E9AFE">{{ err }}</font>
+        </div>
     	</fieldset>
 	</form>
     </center>

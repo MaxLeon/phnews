@@ -1,4 +1,6 @@
-<?php
+<?php namespace App\Controllers;
+use App\Models\Users;
+use \Phalcon\Mvc\Controller;
 /**
  * Clase de la pagina de registro
  *
@@ -10,7 +12,7 @@
  *
  * @link http://phnews.com/singup
  */
-class SignupController extends \Phalcon\Mvc\Controller
+class SignupController extends Controller
 {
     /**
      * Funcion index
@@ -30,11 +32,12 @@ class SignupController extends \Phalcon\Mvc\Controller
         $User = new Users();
 
         if ($this->request->isPost()) {
-            $User->uname=$this->request->getPost('uname');
+            $User->uname=$this->request->getPost('uname', "string");
             $User->fname=$this->request->getPost('fname');
             $User->lname=$this->request->getPost('lname');
-            $User->pass=sha1($this->request->getPost('pass'));
+            $User->pass=$this->security->hash($this->request->getPost('pass'));
             $User->save();
+            $this->response->redirect('/login');
         }
     }
 }

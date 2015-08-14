@@ -1,0 +1,11 @@
+{
+    "name": "root/news",
+    "description": "\"news phalcon\"",
+    "authors": [
+        {
+            "name": "Maximo De Leon",
+            "email": "maximo@mctekk.com"
+        }
+    ],
+    "require": {}
+}

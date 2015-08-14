@@ -4,7 +4,7 @@
 	<br><br>
 	<p><b>
 	<body>
-        <?php echo $this->tag->form(array('create/new')); ?>
+        <?php echo $this->tag->form(array('create')); ?>
 
         <fieldset>
 
@@ -31,10 +31,10 @@
         <br>
         
         <div>
-            <?php echo $this->tag->submitButton(array('Create')); ?>
+            <?php echo $this->tag->submitButton(array('Create', 'name' => 'create')); ?>  <?php echo $this->tag->submitButton(array('Cancel', 'name' => 'create')); ?>
         </div>
-            
-        </div>
+        <br>
+        <div><font color="#2E9AFE"><?php echo $err; ?></font></div>
     
     	</fieldset>
 	</form>

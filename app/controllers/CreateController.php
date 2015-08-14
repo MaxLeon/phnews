@@ -1,4 +1,6 @@
-<?php
+<?php namespace App\Controllers;
+use \Phalcon\Mvc\Controller;
+use App\Models\News;
 /**
  * Clase representativa del controlador en cargado de crear las noticias
  *
@@ -10,7 +12,7 @@
  *
  * @link http://phnews.com/create
  */
-class CreateController extends \Phalcon\Mvc\Controller
+class CreateController extends Controller
 {
     /**
      * Funcion encargada de insertar la noticia
@@ -18,6 +20,37 @@ class CreateController extends \Phalcon\Mvc\Controller
      */
     public function indexAction()
     {
+
+        $New = new News();
+        $err="";
+        $this->view->err=$err;
+
+        if ($this->request->isPost()) {
+
+            switch ($this->request->getPost('create')) {
+                case 'Create':
+
+                $New->tittle=$this->request->getPost('tittle', "string");
+                $New->author=$this->request->getPost('author', "string");
+                $New->body=$this->request->getPost('body', "string");
+                if (!$New->save()) {
+
+                    $err="All the fields are required";
+                    $this->view->err=$err;
+
+                } else {
+
+                    $this->response->redirect('/inpage');
+                }
+                    
+                    break;
+
+                case 'Cancel':
+                        $this->response->redirect('/inpage');
+                    break;
+            }
+            
+        }
 
     }
 
@@ -27,16 +60,7 @@ class CreateController extends \Phalcon\Mvc\Controller
      */
     public function newAction()
     {
-        $New = new News();
 
-        if ($this->request->isPost()) {
-
-            $New->tittle=$this->request->getPost('tittle');
-            $New->author=$this->request->getPost('author');
-            $New->body=$this->request->getPost('body');
-            $New->save();
-            $this->response->redirect('/inpage');
-        }
     }
 
 }

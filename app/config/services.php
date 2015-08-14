@@ -28,6 +28,10 @@ $di->set('url', function () use ($config) {
     return $url;
 }, true);
 
+$di->set('router', function() {    
+    return include __DIR__ . "/routes.php";
+}, true);
+
 /**
  * Setting up the view component
  */

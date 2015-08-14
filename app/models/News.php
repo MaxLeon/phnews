@@ -1,4 +1,4 @@
-<?php 
+<?php namespace App\Models;
 use Phalcon\Mvc\Model;
 /**
  * Clase representativa del modelo News y se encarga de contener los datos de las noticias
@@ -17,4 +17,4 @@ class News extends Model
 	public $author;
 	public $body;
 }
- ?>}
+ ?>

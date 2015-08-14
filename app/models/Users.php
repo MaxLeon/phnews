@@ -1,4 +1,4 @@
-<?php
+<?php namespace App\Models;
 use Phalcon\Mvc\Model;
 /**
  * Clase representativa del modelo Users y se encarga de contener los datos del usuario

@@ -8,7 +8,7 @@
     <br><br>
     <center>
     <body>
-        <?php echo $this->tag->form(array('login/log')); ?>
+        <?php echo $this->tag->form(array('login')); ?>
 
         <fieldset>
         
@@ -31,7 +31,11 @@
         <div>
             <?php echo $this->tag->submitButton(array('Login', 'name' => 'login')); ?>
         </div>
-    
+
+        <div>
+        <br>
+            <font color="#2E9AFE"><?php echo $err; ?></font>
+        </div>
     	</fieldset>
 	</form>
     </center>
